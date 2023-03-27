@@ -6,8 +6,18 @@
 	</head>
 	<body>
         <div class="container">
-		<h1>Login</h1>
-        <!-- This is where our form will go. -->
+			<h1>Login</h1>
+			<form method="post", action="{{url_for('login')}}">
+				{{form.csrf_token}}
+				<p>
+					{{form.email.label}}
+					{{form.email(size=30)}}
+				</p>
+				<p>
+					{{form.password.label}}
+					{{form.password(size=30)}}
+				</p>
+			</form>
         </div>
 	</body>
 </html>
