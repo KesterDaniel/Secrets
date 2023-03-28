@@ -2,11 +2,15 @@ from flask import Flask, render_template
 import os
 from dotenv import load_dotenv
 from forms import LoginForm
+from flask_bootstrap import Bootstrap
 
 load_dotenv()
 
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv("MY_SECRET_KEY")
+
+Bootstrap(app)
 
 
 @app.route("/")
